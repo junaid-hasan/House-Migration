@@ -1,0 +1,21 @@
+
+body {
+  margin: 0;
+  overflow: hidden;
+}
+/* .city {
+  fill: red;
+  stroke: #fff;
+  stroke-width: 2px;
+} */
+
+.menu-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right:0;
+  display:flex;
+  display:relative;
+  justify-content:space-around;
+}
+
