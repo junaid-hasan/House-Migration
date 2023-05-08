@@ -19,3 +19,14 @@ body {
   justify-content:space-around;
 }
 
+
+.slider {
+  width: 80%;
+
+}
+.slider-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}

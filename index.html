@@ -1,19 +1,21 @@
 <!DOCTYPE html><html><head>
     <title>map us 2</title>
-		<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/topojson@3.0.2/dist/topojson.min.js"></script>
-
   <script src="https://unpkg.com/d3@7.8.4"></script></head>
   <body>
+    <div id="container">Our Title</div>
     <div id="container">
-  		Our Title
+      <button type="button" id="clearButton">Clear Map</button>
+    </div>
+    <div id="container">
+      <button type="button" id="bubbleButton">Show Net Flow of Each Cities</button>
+    </div>
 
-		</div>
-    <div id="container" z-index="100">
-  		<input class="slider" id="dateSlider1" type="range" min="0" max="4" step="1" value="0">
-
-		</div>
+    <div class="slider-container" z-index="100">
+      Net Flow By Date:   
+      <input class="slider" id="dateSlider1" type="range" min="0" max="20" step="1" value="0">
+    </div>
   
-
 
 <script src="bundle.js"></script></body></html>
