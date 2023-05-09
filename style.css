@@ -1,16 +1,22 @@
 
 body {
   margin: 0;
-  overflow: hidden;
+  overflow: scroll;
+  
 }
 /* .city {
   fill: red;
   stroke: #fff;
   stroke-width: 2px;
 } */
-
+h1 {
+color: darkblue;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .menu-container {
-  position: fixed;
+  position: bottom;
   top: 0;
   left: 0;
   right:0;
@@ -20,8 +26,9 @@ body {
 }
 
 
+
 .slider {
-  width: 80%;
+  width: 40%;
 
 }
 .slider-container {
@@ -29,4 +36,17 @@ body {
   justify-content: center;
   align-items: center;
 
+}
+
+#outer
+{
+  width:100%;
+  margin-right:auto;
+  margin-left:0px;
+  padding-left:0px;
+  text-align: center;
+}
+.inner
+{
+  display: inline-block;
 }

@@ -1,21 +1,99 @@
 <!DOCTYPE html><html><head>
-    <title>map us 2</title>
+    <title>Where are you moving next?</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/topojson@3.0.2/dist/topojson.min.js"></script>
-  <script src="https://unpkg.com/d3@7.8.4"></script></head>
+    <script src="https://unpkg.com/d3@7.8.4"></script>
+  <script src="https://unpkg.com/d3@7.8.4"></script><script src="https://unpkg.com/d3@7.8.4"></script><script src="https://unpkg.com/d3@7.8.4"></script><script src="https://unpkg.com/d3@7.8.4"></script></head>
   <body>
-    <div id="container">Our Title</div>
-    <div id="container">
-      <button type="button" id="clearButton">Clear Map</button>
+    <h1>Did COVID make people escape cities?</h1>
+    <div id="outer">
+      <div id="container" class="inner">
+      <button type="button" id="clearButton">
+        Clear Map
+      </button>
+    	</div>
+      <div id="container" class="inner">
+      <button type="button" id="bubbleButton">
+        Show Net Flow
+      </button>
+    	</div>
+    	<div id="container" class="inner">
+      <button type="button" id="leaverButton">
+        Show Outgoers
+      </button>
+    	</div>
+    	<div id="container" class="inner">
+      <button type="button" id="incomerButton">
+        Show Incomers
+      </button>
+   	 </div>
+    <div style="margin-left: -150px;">
+      <svg id="legend" height="50" width="760"></svg>
     </div>
-    <div id="container">
-      <button type="button" id="bubbleButton">Show Net Flow of Each Cities</button>
-    </div>
-
+  </div>
+    
     <div class="slider-container" z-index="100">
-      Net Flow By Date:   
+      <button id="playButton">Play</button>
+<!--- emsp and nbsp are for spaces-->
+      <label for="dateSlider1">  &nbsp;   Season: </label> &nbsp;
       <input class="slider" id="dateSlider1" type="range" min="0" max="20" step="1" value="0">
     </div>
-  
+    
+    
+        
+    <script src="bundle.js"></script>
+    
+    
 
-<script src="bundle.js"></script></body></html>
+    <div style="margin: 25px 50px 75px;">
+          
+<h2 id="where-are-people-migrating-">Where are people migrating?</h2>
+<p>Using <a href="https://docs.google.com/spreadsheets/d/1JhNplghcvx2qCqCfsfe2_sLvQA-W4hpb/edit?usp=sharing&amp;ouid=114995913357222036514&amp;rtpof=true&amp;sd=true">data</a> from <a href="https://www.redfin.com/">Redfin</a>, we show the top destinations where people migrate out or migrate in to major cities. The data is a quarterly migration data from October 2016 to December 2021. Therefore it encompasses both the period before the pandemic and during the Coronavirus pandemic.</p>
+<p>We reveal the following aspects with our visualization:</p>
+<ol>
+<li>Net flow (people moving in - people moving out) who purchased on Redfin in all major metros.</li>
+<li>Cities where outgoers are migrating to in each metro.</li>
+<li>Cities where incomers of each metro are originated from. </li>
+</ol>
+<p>It is an interactive map. Feel free to click the buttons to visualize different aspects of the data, select your desired cities, and explore the desired time periods!</p>
+<h2 id="interaction-tips-">Interaction tips:</h2>
+<ol>
+  <li> The Website works best on Landscape Mode (for mobile devices). On a mobile device, kindly rotate your screen to landscape and refresh the browser.</li>
+<li>Click on "Show Net Flow", "Show Outgoers", or "Show Incomers" buttons to visualize different aspects of the data.</li>
+<li>Slide the "Season" slider to visualize the changes over time.</li>
+<li>Click the "Play" button to animate the changes over time.</li>
+<li>Click on a city to visualize the top places people in that city are moving from or migrating to.</li>
+<li>Hover over a city to see the net flow value (People moving in - People moving out).</li>
+<li>Hover over the flows to view the percentage of people moving to the city based on all incomers or people leaving the city based on all outgoers.</li>
+</ol>
+<h2 id="in-depth">In-depth</h2>
+<p>We used the migration data collected from about 2 million Redfin users (link <a href="https://docs.google.com/spreadsheets/d/1JhNplghcvx2qCqCfsfe2_sLvQA-W4hpb/edit?usp=sharing&amp;ouid=114995913357222036514&amp;rtpof=true&amp;sd=true">here</a> from <a href="https://www.redfin.com">Redfin</a>), recording people who moved from one city to another when they bought a house on Redfin.</p>
+<p>The data consists of a period of five years (Fall 2016-Fall 2021).</p>
+<ol>
+  <li> Did New York and LA see a COVID exodus?
+    </li>
+  <li>
+    Which cities saw an influx? Was the Texas move real?
+  </li>
+  <li>
+    What more do you see?
+  </li>
+</ol>
+<h3 id="features">Features</h3>
+<ol>
+<li>Use the "Show Net Flow" button to create the bubble map of netflows. The size of bubbles encodes the net flow values. Red represents positive migration and blue represents negative migration. One can use the slider to change the time period, and hover on different cities to read the net flow values.</li>
+<li>Use the "Show Outgoers" button to create the flow maps for each city (by default Seattle). The width of lines encodes the percentage of people leaving the city based on all outgoers. One can click on a city to visualize the top places people in that city are migrating to. Use the slider to change the time period. Hover over the flows to view the percentage of people leaving the city based on all outgoers, or on the cities to read the net flow values.</li>
+<li>Use the "Show Incomers" button to create the flow maps for each city (by default Seattle). The width of lines encodes the percentage of people moving to the city based on all incomers. One can click on a city to visualize the top places from where people have migrated from. Use the slider to change the time period. Hover over the flows to view the percentage of people moving to the city based on all incomers, or on the cities to read the net flow values.</li>
+<li>There is a convenient "Play" button which allows one to track migration across time.</li>
+<li>Use "Clear Map" button to clear all plots.</li>
+</ol>
+<h3 id="credits">Credits</h3>
+<ol>
+<li>We used the data from <a href="https://www.redfin.com">Redfin</a> for Migration.</li>
+<li>We used <a href="https://simplemaps.com/data/us-cities">Simple Maps Data</a> for the Latitude and Longitude of cities.</li>
+</ol>
+
+    </div>
+
+    
+</body></html>
